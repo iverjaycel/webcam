@@ -54,28 +54,9 @@ class Faceemotion(VideoTransformerBase):
 def main():
     # Face Analysis Application #
     st.title("Real Time Face Emotion Detection Application")
-    activiteis = ["Home", "Webcam Face Detection", "About"]
+    activiteis = ["Webcam Face Detection", "About"]
     choice = st.sidebar.selectbox("Select Activity", activiteis)
-    st.sidebar.markdown(
-        """ Developed by Mohammad Juned Khan    
-            Email : Mohammad.juned.z.khan@gmail.com  
-            [LinkedIn] (https://www.linkedin.com/in/md-juned-khan)""")
-    if choice == "Home":
-        html_temp_home1 = """<div style="background-color:#6D7B8D;padding:10px">
-                                            <h4 style="color:white;text-align:center;">
-                                            Face Emotion detection application using OpenCV, Custom CNN model and Streamlit.</h4>
-                                            </div>
-                                            </br>"""
-        st.markdown(html_temp_home1, unsafe_allow_html=True)
-        st.write("""
-                 The application has two functionalities.
-
-                 1. Real time face detection using web cam feed.
-
-                 2. Real time face emotion recognization.
-
-                 """)
-    elif choice == "Webcam Face Detection":
+    if choice == "Webcam Face Detection":
         st.header("Webcam Live Feed")
         st.write("Click on start to use webcam and detect your face emotion")
         webrtc_streamer(key="example", mode=WebRtcMode.SENDRECV, rtc_configuration=RTC_CONFIGURATION,
